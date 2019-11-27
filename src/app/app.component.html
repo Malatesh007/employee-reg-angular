@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ng-container>
-    <div #blurId class="spinner_overlay">
+    <!-- <div #blurId class="spinner_overlay">
         <router-outlet></router-outlet>
-    </div>
+    </div> -->
 
-    <div class="row" style="padding-top: 10%;">
+    <!-- <div class="row" style="padding-top: 10%;">
         <div class="col-md-offset-6">
             <div class="progress-loader " [hidden]="!loading">
                 <mat-progress-spinner [mode]="'indeterminate'">
@@ -12,7 +12,8 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
+    <router-outlet></router-outlet>
     <div class="alert alert-success alert-dismissible success" *ngIf="isSuccess">
 
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
