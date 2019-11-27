@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+      <h2>Employee Register Portal</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="form-class">
+        <form #empForm="ngForm" (ngSubmit)="empForm.form.valid && onSubmit()" novalidate>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" #firstName="ngModel" name="firstName"
+              [(ngModel)]="employeeObj.firstName" [ngClass]="{ 'is-invalid': empForm.submitted && firstName.invalid }"
+              required />
+            <div *ngIf="empForm.submitted && firstName.invalid" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && firstName.invalid" style="color:red">First Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" #lastName="ngModel" name="lastName"
+              [(ngModel)]="employeeObj.lastName" [ngClass]="{ 'is-invalid': empForm.submitted && lastName.invalid }"
+              required />
+            <div *ngIf=" empForm.submitted && lastName.invalid" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && lastName.invalid" style="color:red">Last Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="employeeObj.email"
+              [ngClass]="{ 'is-invalid': empForm.submitted && email.invalid }" required email />
+            <div *ngIf="email.invalid" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && email.invalid" style="color:red">Email must be a valid email address
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="firstName">Department Name</label>
+            <input type="text" class="form-control" #department="ngModel" name="department"
+              [(ngModel)]="employeeObj.department" [ngClass]="{ 'is-invalid': empForm.submitted && firstName.invalid }"
+              required />
+            <div *ngIf="empForm.submitted && department.invalid" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && department.invalid" style="color:red">Department Name is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Select Birth date :</label>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="picker" [(ngModel)]="employeeObj.dateOfBirth" name="dateOfBirth"
+                #dateOfBirth="ngModel" [max]="today">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div *ngIf="!employeeObj.dateOfBirth" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && !employeeObj.dateOfBirth" style="color:red">Birth date must be valid
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+              [(ngModel)]="employeeObj.gender" name="gender" #gender="ngModel">
+              <mat-radio-button class="example-radio-button" *ngFor="let gender of genderArray" [value]="gender">
+                {{gender}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="!employeeObj.gender" class="invalid-feedback">
+              <div *ngIf="empForm.submitted && !employeeObj.gender" style="color:red">Select the gender
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
