@@ -14,6 +14,7 @@ export class ViewPortalComponent implements OnInit {
   deleteBoolean: boolean;
   employeeDetails: Employee[];
   rowsOnPage: number;
+  query: string;
   deleteEmployeeObj: Employee;
   constructor(private viewPortal: ViewPortalService, private appComponent: AppComponent, private router: Router) { }
 
@@ -44,7 +45,7 @@ export class ViewPortalComponent implements OnInit {
     }, errror => {
       this.getEmployeeeRegisterData();
     });
-   
+
   }
 
   addEmployeeRegister() {
@@ -57,4 +58,4 @@ export class ViewPortalComponent implements OnInit {
     this.viewPortal.editEmployeeObj = employeeObj;
     this.router.navigate(['/register']);
   }
-} 
+}

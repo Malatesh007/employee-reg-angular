@@ -11,11 +11,15 @@ import { MatDatepickerModule, MatNativeDateModule, MatAccordion, MatRadioModule,
 import { HttpClientModule } from '@angular/common/http';
 import { UrlConstant } from 'src/url-constant/url-constant';
 import { MainServiceService } from './main-service.service';
+import { SearchfilterPipe } from './searchfilter.pipe';
+import { UpdatecolorDirective } from './updatecolor.directive';
 @NgModule({
   declarations: [
     AppComponent,
     ViewPortalComponent,
     RegisterPortalComponent,
+    SearchfilterPipe,
+    UpdatecolorDirective,
   ],
   imports: [
     BrowserAnimationsModule,
