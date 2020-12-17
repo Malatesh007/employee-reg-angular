@@ -28,7 +28,7 @@
     "bootstrap-tokenfield": "^0.12.0",
     "core-js": "^2.5.4",
     "crypto-js": "^3.1.9-1",
-    "datatables.net": "^1.10.13",
+    "datatables.net": "^1.10.22",
     "datatables.net-bs": "^1.10.13",
     "datatables.net-dt": "^1.10.13",
     "datatables.net-responsive-bs": "^2.1.1",
