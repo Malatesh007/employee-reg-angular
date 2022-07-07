@@ -41,7 +41,7 @@
     "jquery-ui-dist": "^1.12.1",
     "jquery-ui-themes": "^1.12.0",
     "luxon": "^1.12.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng2-ckeditor": "^1.2.2",
     "ng2-googlechart": "^2.21.0",
     "ngx-ui-loader": "^7.2.2",
